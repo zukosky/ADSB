@@ -4,6 +4,7 @@ import time
 import datetime
 import json2html
 import json2table
+#Here is an extra comment
 # Latitude runs east and west
 # Longitude runs north and south
 #url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=41.985271&long=-87.671491'
@@ -23,7 +24,7 @@ url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
 #print("Length of acList dictionary:\t" + str(nRow))
 #print(y[1])
 #print("Manu\tType\tModel\tAlt\tDst\tFrom\tTo")
-print(str(datetime.datetime.now().time())[0:8])
+#print(str(datetime.datetime.now().time())[0:8])
 while True:
     r = requests.get(url)
     z = json.loads(r.content)
