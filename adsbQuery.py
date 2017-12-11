@@ -9,10 +9,12 @@ from enum import Enum
   #  Ohare=2
    # Midway=3
 def getBoundingBox ( bBoxName ):
-    if bBoxName=='Hollywood':
+    if bBoxName == 'Hollywood':
         bboxqs = "?fEBnd=-87.66&fWBnd=-87.679&fSBnd=41.949&fNBnd=42.019"
-    elif bBoxName=='OHare':
+    elif bBoxName == 'OHare':
         bboxqs = "?fEBnd=-87.807414&fWBnd=-88.8024212&fSBnd=41.907635&fNBnd=42.048809"
+    elif bBoxName == 'Midway':
+        bboxqs = "?fWBnd=-87.8641&fEBnd=-87.703&fSBnd=41.749&fNBnd=41.836"
     return bboxqs
 #import json2html
 #import json2table
@@ -29,12 +31,9 @@ url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
 url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
      '?fEBnd=-87.807414&fWBnd=-88.8024212&fSBnd=41.907635&fNBnd=42.048809&fAltU=5000&fAltL=500'
 url = baseurl + \
-      getBoundingBox('OHare') + "&fAltU=5000&fAltL=500"
+      getBoundingBox('Midway') + "&fAltU=5000&fAltL=500"
 
 
-
-
-print(getBoundingBox('OHare'))
 #Landing at Midway
 #url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
  #    '?fWBnd=-87.8641&fEBnd=-87.703&fSBnd=41.749&fNBnd=41.836&fAltU=5000&fAltL=500'
