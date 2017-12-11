@@ -11,6 +11,8 @@ from enum import Enum
 def getBoundingBox ( bBoxName ):
     if bBoxName=='Hollywood':
         bboxqs = "?fEBnd=-87.66&fWBnd=-87.679&fSBnd=41.949&fNBnd=42.019"
+    elif bBoxName=='OHare':
+        bboxqs = "?fEBnd=-87.807414&fWBnd=-88.8024212&fSBnd=41.907635&fNBnd=42.048809"
     return bboxqs
 #import json2html
 #import json2table
@@ -25,14 +27,14 @@ url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
      '?fEBnd=-87.66&fWBnd=-87.679&fSBnd=41.949&fNBnd=42.019&lat=41.9857012&lng=-87.671544'
 #Landing at O'Hare from the East
 url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
-     '?fEBnd=-87.66&fWBnd=-87.679&fSBnd=41.949&fNBnd=42.019&fAltU=5000&fAltL=500'
+     '?fEBnd=-87.807414&fWBnd=-88.8024212&fSBnd=41.907635&fNBnd=42.048809&fAltU=5000&fAltL=500'
 url = baseurl + \
-      getBoundingBox('Hollywood') + "&fAltU=5000&fAltL=500"
+      getBoundingBox('OHare') + "&fAltU=5000&fAltL=500"
 
 
 
 
-print(getBoundingBox('Hollywood'))
+print(getBoundingBox('OHare'))
 #Landing at Midway
 #url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
  #    '?fWBnd=-87.8641&fEBnd=-87.703&fSBnd=41.749&fNBnd=41.836&fAltU=5000&fAltL=500'
