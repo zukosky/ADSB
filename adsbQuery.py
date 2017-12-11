@@ -31,7 +31,7 @@ url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
 url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
      '?fEBnd=-87.807414&fWBnd=-88.8024212&fSBnd=41.907635&fNBnd=42.048809&fAltU=5000&fAltL=500'
 url = baseurl + \
-      getBoundingBox('OHare') + "&fAltU=5000&fAltL=500"
+      getBoundingBox('Hollywood') + "&fAltU=5000&fAltL=500"
 
 
 #Landing at Midway
