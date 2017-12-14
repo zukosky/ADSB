@@ -31,18 +31,7 @@ url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
 url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
      '?fEBnd=-87.807414&fWBnd=-88.8024212&fSBnd=41.907635&fNBnd=42.048809&fAltU=5000&fAltL=500'
 url = baseurl + \
-      getBoundingBox('Hollywood') + "&fAltU=5000&fAltL=100"
-
-
-#Landing at Midway
-#url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
- #    '?fWBnd=-87.8641&fEBnd=-87.703&fSBnd=41.749&fNBnd=41.836&fAltU=5000&fAltL=500'
-#url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json'
-
-#print("Length of acList dictionary:\t" + str(nRow))
-#print(y[1])
-#print("Manu\tType\tModel\tAlt\tDst\tFrom\tTo")
-#print(str(datetime.datetime.now().time())[0:8])
+      getBoundingBox('OHare') + "&fAltU=5000&fAltL=100"
 while True:
     r = requests.get(url)
     z = json.loads(r.content)
@@ -69,11 +58,6 @@ while True:
                 str(y[nRowNum].get("Dst", ""))
                 )
     time.sleep(10)
-    #print(y[nRow]["Type"])
-#print(z)
-#print (y['Mdl'])
-#print(z['acList'])
-#print(json2table.convert(r.content))
 
 
 
