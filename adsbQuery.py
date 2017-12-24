@@ -2,12 +2,6 @@ import requests
 import json
 import time
 import datetime
-from enum import Enum
-
-#class boundingBoxType (Enum):
- #   Hollywood=1
-  #  Ohare=2
-   # Midway=3
 def getBoundingBox ( bBoxName ):
     if bBoxName == 'Hollywood':
         bboxqs = "?fEBnd=-87.66&fWBnd=-87.679&fSBnd=41.949&fNBnd=42.019"
@@ -16,14 +10,6 @@ def getBoundingBox ( bBoxName ):
     elif bBoxName == 'Midway':
         bboxqs = "?fWBnd=-87.8641&fEBnd=-87.703&fSBnd=41.749&fNBnd=41.836"
     return bboxqs
-#import json2html
-#import json2table
-#Here is an extra comment
-# Latitude runs east and west
-# Longitude runs north and south
-#url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=41.985271&long=-87.671491'
-#url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=41.985271&long=-87.671491&fDstL=0&fDstU=1000&fAltU=5000&fAltL=1000'
-#url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?fAir=ORD&fAltU=5000&fAltL=1000'
 baseurl = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json'
 url = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json' \
      '?fEBnd=-87.66&fWBnd=-87.679&fSBnd=41.949&fNBnd=42.019&lat=41.9857012&lng=-87.671544'
