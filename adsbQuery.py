@@ -19,7 +19,7 @@ def getBoundingBox ( bBoxName ):
 baseurl = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json'
 dispKeys = ['Call','Man','Type','Mdl','Alt','Lat','Long','Year','Trak','Dst']
 TAB_1 = "\t"
-url = baseurl + getBoundingBox('OHare') + "&fAltU=5000&fAltL=100"
+url = baseurl + getBoundingBox('Hollywood') + "&fAltU=5000&fAltL=100"
 while True:
     r = requests.get(url)
     rjson = json.loads(r.content)
