@@ -32,9 +32,8 @@ while True:
             if recs[nRowNum].get("Man","") != "" and str(recs[nRowNum].get("Type",""))[0:3] in wideBodyLeft4:
                 dispStr = str(datetime.datetime.now().time())[0:8]+TAB_1
                 for thisKey in dispKeys:
-#                   if str(recs[nRowNum].get("Type",""))[0:3] in wideBodyLeft4:
                    dispStr = dispStr + str(recs[nRowNum].get(thisKey,""))+ TAB_1
-        print(dispStr)
+                print(dispStr)
     time.sleep(10)
 
 
