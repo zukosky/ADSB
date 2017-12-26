@@ -18,9 +18,10 @@ def getBoundingBox ( bBoxName ):
 ################################################################################################
 baseurl = 'http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json'
 dispKeys = ['Call','Man','Type','Mdl','Alt','Lat','Long','Year','Trak','Dst']
+dispKeys = ['Call','Man','Type','From','To','Alt','Lat','Trak','Dst']
 wideBodyLeft4 = ['B78','B77','B76','B74','A30','A33','A34','A38','MD11','DC10']
 TAB_1 = "\t"
-url = baseurl + getBoundingBox('Hollywood') + "&fAltU=5000&fAltL=100"
+url = baseurl + getBoundingBox('OHare') + "&fAltU=5000&fAltL=100"
 while True:
     r = requests.get(url)
     rjson = json.loads(r.content)
@@ -29,7 +30,7 @@ while True:
     nRow = len(recs)
     if nRow>0:
         for nRowNum in range(0,nRow):
-            if recs[nRowNum].get("Man","") != "" and str(recs[nRowNum].get("Type",""))[0:3] in wideBodyLeft4:
+            if recs[nRowNum].get("Type","") != "" and str(recs[nRowNum].get("Type",""))[0:3] in wideBodyLeft4:
                 dispStr = str(datetime.datetime.now().time())[0:8]+TAB_1
                 for thisKey in dispKeys:
                    dispStr = dispStr + str(recs[nRowNum].get(thisKey,""))+ TAB_1
