@@ -21,7 +21,7 @@ dispKeys = ['Call','Man','Type','Mdl','Alt','Lat','Long','Year','Trak','Dst']
 dispKeys = ['Call','Man','Type','From','To','Alt','Lat','Trak','Dst']
 TAB_1 = "\t"
 url = baseurl + getBoundingBox('OHare') + "&fAltU=5000&fAltL=100&fTypC=CRJ7"
-url = baseurl + "?fAltU=50000&fAltL=100&fTypC=A38"
+url = baseurl + "?fAltU=50000&fAltL=100&fTypC=B727"
 while True:
     r = requests.get(url)
     rjson = json.loads(r.content)

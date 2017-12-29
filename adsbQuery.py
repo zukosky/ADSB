@@ -21,7 +21,7 @@ dispKeys = ['Call','Man','Type','Mdl','Alt','Lat','Long','Year','Trak','Dst']
 dispKeys = ['Call','Man','Type','From','To','Alt','Lat','Trak','Dst']
 wideBodyLeft3 = ['B78','B77','B76','B74','A30','A33','A34','A35','A38','MD1','DC1']
 TAB_1 = "\t"
-url = baseurl + getBoundingBox('Hollywood') + "&fAltU=5000&fAltL=100"
+url = baseurl + getBoundingBox('OHare') + "&fAltU=5000&fAltL=100"
 while True:
     r = requests.get(url)
     rjson = json.loads(r.content)
