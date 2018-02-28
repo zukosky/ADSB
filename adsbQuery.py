@@ -21,7 +21,7 @@ dispKeys = ['Call','Man','Type','Mdl','Alt','Lat','Long','Year','Trak','Dst']
 dispKeys = ['Call','Man','Type','From','To','Alt','Lat','Trak','Dst']
 wideBodyLeft3 = ['B78','B77','B76','B74','A30','A33','A34','A35','A38','MD1','DC1']
 TAB_1 = "\t"
-url = baseurl + getBoundingBox('OHare') + "&fAltU=5000&fAltL=100"
+url = baseurl + getBoundingBox('Hollywood') + "&fAltU=5000&fAltL=100"
 while True:
     r = requests.get(url)
     rjson = json.loads(r.content)
@@ -30,11 +30,22 @@ while True:
     nRow = len(recs)
     if nRow>0:
         for nRowNum in range(0,nRow):
-            if recs[nRowNum].get("Type","") != "" and str(recs[nRowNum].get("Type",""))[0:3] in wideBodyLeft3:
-                dispStr = str(datetime.datetime.now().time())[0:8]+TAB_1
-                for thisKey in dispKeys:
-                   dispStr = dispStr + str(recs[nRowNum].get(thisKey,""))+ TAB_1
-                print(dispStr)
+#            if recs[nRowNum].get("Type","") != "" and str(recs[nRowNum].get("Type",""))[0:3] in wideBodyLeft3:
+            if recs[nRowNum].get("Type","") != "":
+                outStr = "{:10} {:7} {:18} {:4} {:50}   {:50} {:5} {:10} {:5}".format(str(datetime.datetime.now().time())[0:8],
+                str(recs[nRowNum].get('Call',"")),
+                str(recs[nRowNum].get('Man',"")),
+                str(recs[nRowNum].get('Type',"")),
+                str(recs[nRowNum].get('From',""))[:25],
+                str(recs[nRowNum].get('To',""))[:25],
+                str(recs[nRowNum].get('Alt',"")),
+                str(recs[nRowNum].get('Lat',"")),
+                str(recs[nRowNum].get('Trak',"")))
+                print(outStr)
+                #dispStr = str(datetime.datetime.now().time())[0:8]+TAB_1
+                #for thisKey in dispKeys:
+                #   dispStr = dispStr + str(recs[nRowNum].get(thisKey,""))+ TAB_1
+                #print(dispStr)
     time.sleep(10)
 
 
